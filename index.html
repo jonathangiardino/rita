@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>'Rita - Find Pizza Anywhere</title>
+
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+  <script src="https://kit.fontawesome.com/eeaa02e6cc.js"></script>
+</head>
+
+<body>
+
+  <!-- Main Section Home -->
+
+  <section class="container-main">
+    <div class="logo">
+      <a class="logoLink" href="#">
+        <img id="logo" src="assets/img/ritaLogo.svg" alt="logo-pizza">
+        <p class="ritaLogo">'Rita</p>
+      </a>
+    </div>
+    <div class=" btn-about">
+      <button onclick="navigateSection2()" class="btn corner-btn" type="button" name="button">What is 'Rita?</button>
+    </div>
+    <div class="main">
+      <div class="row">
+        <div class="header">
+          <h1 class="heading1 animate-pop-in">Find pizza wherever you are!</h1>
+          <h2 class="heading2 animate-pop-in">Click to get your location and treat yourself, ‘cause in pizza we crust.</h2>
+          <div class="container buttons-wrapper">
+            <!-- The input below was an idea to develop but chose to go with geolocation button only -->
+            <button onclick="getLocation(); navigateSection();" class="orange-btn" type="button" name="button">Locate me!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map and Results -->
+
+  <div class="map-container">
+    <div class="map">
+      <div id="map">
+      </div>
+      <button value="click" onclick="toggle_visibility();" id="hide-show" type="button" name="button">Hide/Show Results</button>
+    </div>
+    <div class="results-panel">
+      <div id="panel"></div>
+    </div>
+  </div>
+
+  <!-- Info section  -->
+
+  <section class="info-section">
+    <div class="row">
+      <div class="info-head" id="howItWorks">
+        <h3> How does 'Rita work?</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="info">
+        <div class="infobox">
+          <span class="awesome-icons"><i class="fas fa-location-arrow"></i></span>
+          <h2>Locate</h2>
+          <p>Click on "Locate me" button and 'Rita will show you all the restaurant which make Pizza around you in a 2.5 km radius or input a location and find Pizza anywhere.</p>
+        </div>
+        <div class="infobox">
+          <span class="awesome-icons animate-pop-in"><i class="fas fa-search-location"></i></span>
+          <h2>Choose from the Map</h2>
+          <p>Start mouth-watering and decide which place is the closest or makes your favorite type of Pizza.
+            Thanks to the integration with Google Maps you can check opening time and menu on the official website.</p>
+        </div>
+        <div class="infobox">
+          <span class="awesome-icons"><i class="fas fa-pizza-slice"></i></span>
+          <h2>Go get it!</h2>
+          <p>All right, we had fun together but now it's go time..<br>
+            RUN as fast as you can to the place you've chosen and go get your slice!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+
+  <div class="footer">
+    <div class="info-head" id="info">
+      <h3>Follow the Hashtag #Pizza on Social Networks!</h3>
+    </div>
+    <a href="https://www.facebook.com/search/places/?q=pizza&f=AbqOPrBClj_lIw6mGXOuqz4R8ar4B32YUWyhTmTm_r2p1nJmv7rHnXZg6kibdYYv3ilf8Lu6yKlBNcVD5nf_a9Eg&ref=eyJzaWQiOiI2Y2MzZmY0YjAyZmRiZjQ5MjljYjBjY2IwOWM1MDA5NiIsInJlZiI6InBsYWNlc190b3BfbW9kdWxlX3NlZV9tb3JlIn0%3D&epa=SERP_TAB"
+      target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/explore/tags/pizza/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.pinterest.ie/redstaryeast/pizza/" target="_blank"><i class="fab fa-pinterest"></i></a>
+  </div>
+
+
+  <script src="assets/js/main.js">
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuB19xCA-ERWZOKyfw7jfAiP9e8ZIRUk0&libraries=places&callback=initMap">
+  </script>
+</body>
+
+</html>
