@@ -181,9 +181,7 @@ body {
   margin: 5px;
   font-size: 30px;
   font-family: "Roboto", sans-serif;
-  background: -webkit-linear-gradient(right, #e63a4f, #FF8900 70%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #FF8900;
 }
 
 .info {
@@ -334,40 +332,33 @@ a {
 
 /* Media Queries */
 @media only screen and (max-width: 767px) {
+  .heading1 {
+    font-size: 30px;
+  }
+
   .infobox {
     width: 100%;
     height: auto;
   }
 
-  .location-input {
-    width: 90%;
-  }
-
   .map {
     margin-left: 2px;
     margin-right: 2px;
+    height: 500px;
+    margin-bottom: -150px;
   }
 
   #map {
-    height: 68%;
+    height: 60%;
   }
 
   .map-container, .results-panel {
     flex-wrap: wrap;
   }
 
-  .results-panel {
-    position: absolute;
-    z-index: -1;
-    top: 1490px;
-    left: 10px;
-  }
-
-  .open {
-    width: auto;
-    margin-top: 70px;
-  }
-
+.info-head {
+  font-size: 25px;
+}
   .info-section {
     margin-top: 100px;
   }
