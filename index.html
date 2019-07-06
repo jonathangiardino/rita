@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>'Rita - Find Pizza Anywhere</title>
-
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
   <script src="https://kit.fontawesome.com/eeaa02e6cc.js"></script>
 </head>
@@ -22,8 +22,8 @@
         <p class="ritaLogo">'Rita</p>
       </a>
     </div>
-    <div class=" btn-about">
-      <button onclick="navigateSection2()" class="btn corner-btn" type="button" name="button">What is 'Rita?</button>
+    <div class="btn-about">
+      <button onclick="smoothScroll('howItWorks')" class="btn corner-btn" id="corner-btn" type="button" name="button">What is 'Rita?</button>
     </div>
     <div class="main">
       <div class="row">
@@ -32,7 +32,7 @@
           <h2 class="heading2 animate-pop-in">Click to get your location and treat yourself, ‘cause in pizza we crust.</h2>
           <div class="container buttons-wrapper">
             <!-- The input below was an idea to develop but chose to go with geolocation button only -->
-            <button onclick="getLocation(); navigateSection();" class="orange-btn" type="button" name="button">Locate me!</button>
+            <button onclick="smoothScroll('map'); getLocation();" class="btn orange-btn" type="button" name="button">Locate me!</button>
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@
 
   <div class="map-container">
     <div class="map">
-      <div id="map">
+      <div class="target" id="map">
       </div>
       <button value="click" onclick="toggle_visibility();" id="hide-show" type="button" name="button">Hide/Show Results</button>
     </div>
