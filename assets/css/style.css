@@ -19,6 +19,7 @@ body {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  background-attachment: fixed;
 }
 
 .logo {
@@ -249,6 +250,7 @@ a i:hover {
 .map-container {
   display: flex;
   justify-content: center;
+  padding-top: 70px;
 }
 
 .map {
