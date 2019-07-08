@@ -135,10 +135,10 @@ body {
 
 .location-input {
   padding: 3px 10px;
-  margin: 8px;
-  width: 400px;
-  height: 35px;
-  font-size: 17px;
+    margin: 7px;
+    width: 300px;
+    height: 35px;
+  font-size: 14px;
   font-family: "Roboto", sans-serif;
   border-radius: 5px;
   text-align: center;
@@ -162,6 +162,30 @@ body {
 }
 
 .orange-btn:hover {
+  color: #ffffff;
+  border: none;
+  transform: translateY(-3px);
+  background-image: linear-gradient(to right, #e63a4f 0%, #FF8900 70%);
+  cursor: pointer;
+}
+
+.orange-btn-small {
+  margin: 8px;
+  width: 100px;
+  height: 45px;
+  font-size: 17px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #e63a4f 0%, #FF8900 100%);
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  transition: 0.5s;
+}
+
+.orange-btn-small:hover {
   color: #ffffff;
   border: none;
   transform: translateY(-3px);

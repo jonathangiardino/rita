@@ -30,8 +30,9 @@
           <h1 class="heading1 animate-pop-in">Find pizza wherever you are!</h1>
           <h2 class="heading2 animate-pop-in">Click to get your location and treat yourself, ‘cause in pizza we crust.</h2>
           <div class="container buttons-wrapper">
-            <!-- The input below was an idea to develop but chose to go with geolocation button only -->
-            <button onclick="smoothScroll('map'); getLocation();" class="btn orange-btn" type="button" name="button">Locate me!</button>
+            <button onclick="smoothScroll('map'); getLocation();" class="btn orange-btn" type="button" name="button"><i class="fas fa-compass"></i> Locate me!</button>
+            <input class="location-input" id="address" placeholder="Or type another location">
+            <button onclick="smoothScroll('map')" id="submit" class="btn orange-btn-small" type="button" name="button">Go!</button>
           </div>
         </div>
       </div>
@@ -95,8 +96,9 @@
   </div>
 
 
-  <script src="assets/js/main.js">
-  </script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/smoothScroll.js"></script>
+  <script src="assets/js/search.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuB19xCA-ERWZOKyfw7jfAiP9e8ZIRUk0&libraries=places&callback=initMap">
   </script>
 </body>

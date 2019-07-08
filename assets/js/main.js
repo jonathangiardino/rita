@@ -5,6 +5,7 @@ let infoWindow;
 let currentInfoWindow;
 let service;
 let infoPane;
+let searchBox;
 
 
 
@@ -19,17 +20,40 @@ function initMap() {
       lat: 40.8518,
       lng: 14.2681
     },
-    zoom: 17
+    zoom: 17,
   });
+
+  //
+  // let geocoder = new google.maps.Geocoder();
+  //
+  // document.getElementById('submit').addEventListener('click', function() {
+  //   geocodeAddress(geocoder, map);
+  // });
 }
 
+// function geocodeAddress(geocoder, resultsMap) {
+//   let address = document.getElementById('address').value;
+//   geocoder.geocode({
+//     'address': address
+//   }, function(results, status) {
+//     if (status === 'OK') {
+//       resultsMap.setCenter(results[0].geometry.location);
+//       let marker = new google.maps.Marker({
+//         map: resultsMap,
+//         position: results[0].geometry.location
+//       });
+//     } else {
+//       alert('Geocode was not successful for the following reason: ' + status);
+//     }
+//   });
+// }
 
 // Geolocating User on Click
 
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
+      let pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
@@ -186,79 +210,10 @@ function showPanel(placeResult) {
 }
 
 function toggle_visibility() {
-  var p = document.getElementById("panel");
+  let p = document.getElementById("panel");
   if (p.style.display == 'block') {
     p.style.display = 'none';
   } else {
     p.style.display = 'block';
   }
-}
-
-// Below Functions for linking ID have been overwritten by the smoothScroll as it works for all browsers
-
-// function navigateSection() {
-//   window.scrollTo(0, document.getElementById('map').offsetTop)
-// }
-//
-// function navigateSection2() {
-//   window.scrollTo(0, document.getElementById('howItWorks').offsetTop)
-// }
-
-
-// Scroll behaviour for ALl browsers source: https://embed.plnkr.co/plunk/29jeYo
-
-
-function currentYPosition() {
-  // Firefox, Chrome, Opera, Safari
-  if (self.pageYOffset) return self.pageYOffset;
-  // Internet Explorer 6 - standards mode
-  if (document.documentElement && document.documentElement.scrollTop)
-    return document.documentElement.scrollTop;
-  // Internet Explorer 6, 7 and 8
-  if (document.body.scrollTop) return document.body.scrollTop;
-  return 0;
-}
-
-
-function elmYPosition(eID) {
-  var elm = document.getElementById(eID);
-  var y = elm.offsetTop;
-  var node = elm;
-  while (node.offsetParent && node.offsetParent != document.body) {
-    node = node.offsetParent;
-    y += node.offsetTop;
-  }
-  return y;
-}
-
-
-function smoothScroll(eID) {
-  var startY = currentYPosition();
-  var stopY = elmYPosition(eID);
-  var distance = stopY > startY ? stopY - startY : startY - stopY;
-  if (distance < 100) {
-    scrollTo(0, stopY);
-    return;
-  }
-  var speed = Math.round(distance / 100);
-  if (speed >= 20) speed = 20;
-  var step = Math.round(distance / 40);
-  var leapY = stopY > startY ? startY + step : startY - step;
-  var timer = 0;
-  if (stopY > startY) {
-    for (var i = startY; i < stopY; i += step) {
-      setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
-      leapY += step;
-      if (leapY > stopY) leapY = stopY;
-      timer++;
-    }
-    return;
-  }
-  for (var i = startY; i > stopY; i -= step) {
-    setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
-    leapY -= step;
-    if (leapY < stopY) leapY = stopY;
-    timer++;
-  }
-  return false;
 }
