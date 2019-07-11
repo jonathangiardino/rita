@@ -43,9 +43,10 @@ __Existing Features__
 Button LOCATE ME - Additionally the button brings you to the Map Section Below automatically scrolling to it when clicking.
 
 2. _Button WHAT IS ‘RITA_ - The button brings you directly to the Botton of the page where you can find the section “HOW IT WORKS”, and understand how the service works.
-3. _MAP_ - The map is loaded from Google Maps API and has Naples as initial location due to the popularity of Pizza there, being the capital of preparation and tradition.
 
+3. _MAP_ - The map is loaded from Google Maps API and has Naples as initial location due to the popularity of Pizza there, being the capital of preparation and tradition.
 Pizza Place Panel - It is a side panel on Desktop and bottom Panel on Mobile, that opens when clicking on the marker of a Pizza place on the map to show info, rating and website.
+
 4. _Button HIDE/SHOW_ - The button allows the user to hide the panel to have a better focus on the map if desired.
 
 5. _Button SOCIALS_ - ‘Rita is not a real company hence I implemented these social buttons that bring the users to the related social networks (Facebook, Instagram, Pinterest) and are linked to all the posts using the hashtag #Pizza.
@@ -151,6 +152,6 @@ To run locally, you can clone this repository directly into your editor by pasti
 * The scroll function for Safari and Edge was obtained form [here](https://embed.plnkr.co/plunk/29jeYo)
 
 
-* The Nearby Place App was inspired by this tutorial from 
+* The Nearby Place App was inspired by this tutorial from
 [Google Code Labs Developers](https://codelabs.developers.google.com/codelabs/google-maps-nearby-search-js/index.html?index=..%2F..io2019#3)
 And its relative [repository](https://github.com/googlecodelabs/google-maps-nearby-search-js/blob/master/step4/index.html#L213)
