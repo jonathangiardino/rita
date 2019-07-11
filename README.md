@@ -9,6 +9,7 @@ Stop mouth-watering thinking of Pizza, use ‘Rita to find the closest Pizza and
 # Demo
 
 A live demo can be found [here](https://jonathangiardino.github.io/rita/)
+<<<<<<< HEAD
 
 ![alt text](https://github.com/jonathangiardino/rita/blob/master/assets/img/DemoRita.gif "Demo")
 
@@ -131,3 +132,5 @@ The scroll function for Safari and Edge was obtained form [here](https://embed.p
 
 The creation of the Nearby Place App was inspired by this tutorial from [Google Code Labs Developers](https://codelabs.developers.google.com/codelabs/google-maps-nearby-search-js/index.html?index=..%2F..io2019#3)
 And its relative [repository](https://github.com/googlecodelabs/google-maps-nearby-search-js/blob/master/step4/index.html#L213)
+=======
+>>>>>>> c0b904ba743d801a4f48d07015c510288d914602
