@@ -388,7 +388,11 @@ a {
   }
 
   .heading1 {
-    font-size: 30px;
+    font-size: 20px;
+  }
+
+  .heading2 {
+    font-size: 10px;
   }
 
   .infobox {
