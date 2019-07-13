@@ -14,7 +14,7 @@
 
   <!-- Main Section Home -->
 
-  <section class="container-main">
+  <section class="container-main" id="main">
     <div class="logo">
       <a class="logoLink" href="#">
         <img id="logo" src="assets/img/ritaLogo.svg" alt="logo-pizza">
@@ -45,7 +45,8 @@
     <div class="map">
       <div class="target" id="map">
       </div>
-      <button value="click" onclick="toggle_visibility();" id="hide-show" type="button" name="button">Hide/Show Results</button>
+      <button onclick="smoothScroll('main');initMap();" type="button" name="button" id="new-search">New Search</button>
+      <button onclick="toggle_visibility();" id="hide-show" type="button" name="button">Hide/Show Results</button>
     </div>
     <div class="results-panel">
       <div id="panel"></div>
@@ -98,7 +99,6 @@
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/smoothScroll.js"></script>
-  <script src="assets/js/search.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuB19xCA-ERWZOKyfw7jfAiP9e8ZIRUk0&libraries=places&callback=initMap">
   </script>
 </body>

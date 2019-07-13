@@ -1,8 +1,8 @@
 # Rita
 
-‘Rita is a single page application to help you find a Pizza around you, wherever you are in the world.
+‘Rita is a single page application to help you find a Pizza around you or in a specific location, wherever you want in the world.
 ‘Rita stands for Margherita (Classic Tomato and Cheese in English), the most popular and original Pizza ever known.
-It works really easily, you just need to click on the Pizza Locator button and the website will prompt you to activate location services to locate your current position.          
+It works really easily, you just need to click on the Pizza Locator button and the website will prompt you to activate location services to locate your current position or in another location.         
 Once that is done, ‘Rita will Locate all the Pizza reseller around you using Google Places API and the game is on!
 Stop mouth-watering thinking of Pizza, use ‘Rita to find the closest Pizza and treat yourself.
 
@@ -42,18 +42,22 @@ __Existing Features__
 1. _Button LOCATE ME_ - allows users click and get their location; User will be prompted to allow location service otherwise the system will return the message “Geolocation not possible”.
 Button LOCATE ME - Additionally the button brings you to the Map Section Below automatically scrolling to it when clicking.
 
-2. _Button WHAT IS ‘RITA_ - The button brings you directly to the Botton of the page where you can find the section “HOW IT WORKS”, and understand how the service works.
+2. _SEARCH BOX_ - Allows you to type a different location from your current position and uses the Google Autocomplete to retrieve suggestions.
 
-3. _MAP_ - The map is loaded from Google Maps API and has Naples as initial location due to the popularity of Pizza there, being the capital of preparation and tradition.
+3. _Button GO_ - This button brings you to the map section after having chosen the location from the search box dropdown.
+
+4. _Button WHAT IS ‘RITA_ - The button brings you directly to the Botton of the page where you can find the section “HOW IT WORKS”, and understand how the service works.
+
+5. _MAP_ - The map is loaded from Google Maps API and has Naples as initial location due to the popularity of Pizza there, being the capital of preparation and tradition.
 Pizza Place Panel - It is a side panel on Desktop and bottom Panel on Mobile, that opens when clicking on the marker of a Pizza place on the map to show info, rating and website.
 
-4. _Button HIDE/SHOW_ - The button allows the user to hide the panel to have a better focus on the map if desired.
+6. _Button HIDE/SHOW_ - The button allows the user to hide the panel to have a better focus on the map if desired.
 
-5. _Button SOCIALS_ - ‘Rita is not a real company hence I implemented these social buttons that bring the users to the related social networks (Facebook, Instagram, Pinterest) and are linked to all the posts using the hashtag #Pizza.
+7. _Button NEW SEARCH_ - The New Search button reset the map and brings you to the main section where you can decide to get your current position or select a new location.
 
-__Features in progress__
+8. _Button SOCIALS_ - ‘Rita is not a real company hence I implemented these social buttons that bring the users to the related social networks (Facebook, Instagram, Pinterest) and are linked to all the posts using the hashtag #Pizza.
 
-* Search Box - looking for Pizza Places in other locations
+
 
 
 # Technologies Used
@@ -87,24 +91,37 @@ Site has been tested and everything is in place to do what is supposed to, pleas
 - Reload the page and click "Ok" on the page prompt and verify that: a) The page scrolls to the map and b) that your location is found.
 - Check that markers for pizza restaurants are shown
 
+3. __Search box__
+- Type a location in the search box.
+- Verify that the dropdown shows up with suggestions based on your query.
+- Select the location desired and click on the _GO_ Button.
 
-3. __Click on a marker__
+4. __Go Button__
+- Once a location from the search box is selected click on this button.
+- Verify that page scrolls to the map and that the location is the one chosen from the dropdown.
+
+
+5. __Click on a marker__
 - Verify that the info window is shown with the Name and Rating of the restaurant.
 - Verify that Info window disappear after 3 seconds.
 - Verify that side bar with results show on the right (Desktop and Tablet) and below the map (on Mobile devices).
 
 
-4. __Results side bar__
+6. __Results side bar__
 - Verify that when a marker is clicked side bar opens.
 - Verify that the side bar shows place's name, rating, address and website link.
 - Click on the website link and verify it opens another tab
 
+7. __New search Button__
+- Click on the button and verify the map is reset.
+- Verify that you have been scrolled to the main section tom make a new research.
 
-5. __Hide and show button__
+
+8. __Hide and show button__
 - Click on the button and verify that the side bar show and hide at every click
 
 
-6. __Social network buttons__
+9. __Social network buttons__
 - Click on each social button and verify that opens in another tab.
 
 The site has been tested an all the browsers and responds very well on all of them. Moreover the implementation and usage of CSS FlexBox helped to make the website 100% responsive to any device , scaling to any size smoothly.
@@ -113,11 +130,15 @@ The site has been tested an all the browsers and responds very well on all of th
 __During the production the followings bugs have been encountered and solved:__
 
 
-* __NATIVE SIDEBAR FROM GOOGLE__  the native sidebar from Google Maps, to show the results when clicking on the info window was working well on desktop, however when scaling to tablet and mobile it was not reducing its size and accordingly was covering the map not giving the option to users to check the map. _Solution_: I have created a column outside the map which would be shown only when user clicks on the marker, and having created the columns for results with SS Flexbox i was able to add the property wrap which helped to overcome the issue and scale perfectly on different devices
+* __NATIVE SIDEBAR FROM GOOGLE__  the native sidebar from Google Maps, to show the results when clicking on the info window was working well on desktop, however when scaling to tablet and mobile it was not reducing its size and accordingly was covering the map not giving the option to users to check the map. _Solution_: I have created a column outside the map which would be shown only when user clicks on the marker, and having created the columns for results with CSS Flexbox I was able to add the property wrap which helped to overcome the issue and scale perfectly on different devices
 
 * __LINKS IN THE SIDEBAR__  after the first tests the links were not opening in a new tab, the “a” elements were not create din the HTML hence I had to figure out how to overcome this as the UX would be very negative if any restaurant’s site clicked would lead you to another site. _Solution_:  I created a variable called target and assigned the value of “websiteLink.setAttribute('target', ‘_blank’);”_ This resolved the issue.
 
 * __MAP SIZE ON MOBILE__ when switching to mobile, the map was taking the whole space/screen hence every time the user would click on a marker the results would not be visible. _Solution_: I created a Media query that would resize the map to the 60% of its height in order to show the results at every click, and created a button to hide the results if now desired.
+
+
+* __DIFFERENT BOUNDS AND ZOOM BASED ON LOCATION SIZE AND OTHER MARKERS__ I noticed while testing that when researching in bigger location like Rome or Paris were too zoomed out and additionally after every research the bounds of the map increased as they would consider also the markers from the previous researches. _Solution_: I created a button that initialise the map to make a whole new search to improve the UX. I removed the map.fitBounds object from the createMarkers function so that the map would not zoom out if the bounds of the searched place were way larger that the original zoom set up in the initMap and I added a zoom condition in the same initMap function that sets the zoom to a specific size for every location in order to have consistency in the UX.
+
 
 Code was validated on https://validator.w3.org/  and https://jigsaw.w3.org/css-validator/
 

@@ -6,6 +6,7 @@ let currentInfoWindow;
 let service;
 let infoPane;
 let searchBox;
+let markers = [];
 
 
 
@@ -20,9 +21,60 @@ function initMap() {
       lat: 40.8518,
       lng: 14.2681
     },
-    zoom: 17,
+    zoom: 13
+  });
+
+
+  // Create the search box and link it to the UI element.
+  let input = document.getElementById('pac-input');
+  let searchBox = new google.maps.places.SearchBox(input);
+
+  // Bias the SearchBox results towards current map's viewport.
+  map.addListener('bounds_changed', function() {
+    searchBox.setBounds(map.getBounds());
+  });
+
+  // Listen for the event fired when the user selects a prediction and retrieve
+  // more details for that place.
+
+  searchBox.addListener('places_changed', function() {
+    let places = searchBox.getPlaces();
+    let pos = places[0].geometry.location;
+
+    if (places.length == 0) {
+      return;
+    }
+
+    // For each place, get the icon, name and location.
+    let bounds = new google.maps.LatLngBounds();
+    places.forEach(function(place) {
+      if (!place.geometry) {
+        console.log("Returned place contains no geometry");
+        return;
+      }
+      let icon = {
+        url: place.icon,
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25)
+      };
+
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    map.fitBounds(bounds);
+    var zoom = map.getZoom();
+    map.setZoom(zoom > 7 ? 14 : zoom);
+    map.setCenter(pos);
+    getNearbyPlaces(pos);
   });
 }
+
 
 
 
@@ -91,8 +143,9 @@ function createMarkers(places) {
     let marker = new google.maps.Marker({
       position: place.geometry.location,
       map: map,
-      title: place.name
+      title: place.name,
     });
+    console.log(marker);
 
     // Add click listener to each marker
     google.maps.event.addListener(marker, 'click', () => {
@@ -113,10 +166,8 @@ function createMarkers(places) {
     // Adjust the map bounds to include the location of this marker
     bounds.extend(place.geometry.location);
   });
-  /* Once all the markers have been placed, adjust the bounds of the map to
-   * show all the markers within the visible area. */
-  map.fitBounds(bounds);
 }
+
 
 // InfoWindow to display details above the marker
 function showDetails(placeResult, marker, status) {
@@ -134,6 +185,7 @@ function showDetails(placeResult, marker, status) {
     showPanel(placeResult);
   }
 }
+
 
 
 

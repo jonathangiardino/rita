@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,600|Bahiana&display=swap');
 
-
 html {
   scroll-behavior: smooth;
 }
@@ -135,9 +134,9 @@ body {
 
 .location-input {
   padding: 3px 10px;
-    margin: 7px;
-    width: 300px;
-    height: 35px;
+  margin: 7px;
+  width: 300px;
+  height: 35px;
   font-size: 14px;
   font-family: "Roboto", sans-serif;
   border-radius: 5px;
@@ -357,6 +356,31 @@ a {
   cursor: pointer;
 }
 
+#new-search {
+  float: left;
+  margin: 10px;
+  width: 170px;
+  height: 35px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  border-radius: 5px;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  transition: 0.5s;
+  background-image: linear-gradient(to right, #e63a4f 0%, #FF8900 100%);
+}
+
+#new-search:hover {
+  color: #ffffff;
+  border: none;
+  transform: translateY(-3px);
+  background-image: linear-gradient(to right, #e63a4f 0%, #FF8900 70%);
+  cursor: pointer;
+}
+
 /* Media Queries */
 @media only screen and (max-width: 767px) {
   .heading1 {
@@ -383,14 +407,19 @@ a {
     flex-wrap: wrap;
   }
 
-.info-head {
-  font-size: 25px;
-}
+  .results-panel {
+    margin-top: 100px;
+  }
+
+  .info-head {
+    font-size: 25px;
+  }
+
   .info-section {
     margin-top: 100px;
   }
 
-  #hide-show {
+  #hide-show, #new-search {
     font-size: 14px;
     width: 100%;
     margin: 10px 0 0 0;
