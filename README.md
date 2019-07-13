@@ -166,6 +166,8 @@ To run locally, you can clone this repository directly into your editor by pasti
 
 * All the media regarding the restaurants are taken directly from _Google Maps API_
 
+* Icons were taken from [Fontawesome](https://fontawesome.com/start)
+
 **Acknowledgements**
 
 * I got inspiration for the animation of the heart heading from [here](https://cssanimation.rocks/animating-hero-header/)
