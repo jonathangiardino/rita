@@ -152,7 +152,7 @@ The process to deploy on GitHub page is the following:
 * Make sure the source is the master branch and publish.
 * GitHub will generate the URL which is always available in the settings of the Repository
 
-To run locally, you can clone this repository directly into your editor by pasting git clone https://github.com/jonathangiardino/rita.git into your terminal. To do so, type git remote rm origin into the terminal.
+To run locally, you can clone this repository directly into your editor by pasting git clone "https://github.com/jonathangiardino/rita.git"  into your terminal. To do so, type git remote rm origin into the terminal.
 
 # Credits
 
