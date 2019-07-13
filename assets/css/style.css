@@ -384,7 +384,7 @@ a {
 /* Media Queries */
 @media only screen and (max-width: 767px) {
   .main {
-    margin-top: 30px;
+    margin-top: 50px;
   }
 
   .heading1 {
