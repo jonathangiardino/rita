@@ -383,16 +383,20 @@ a {
 
 /* Media Queries */
 @media only screen and (max-width: 767px) {
+  .container-main {
+    background-size: cover;
+  }
+
   .main {
     margin-top: 50px;
   }
 
   .heading1 {
-    font-size: 20px;
+    font-size: 25px;
   }
 
   .heading2 {
-    font-size: 10px;
+    font-size: 15px;
   }
 
   .infobox {
