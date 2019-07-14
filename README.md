@@ -140,7 +140,7 @@ __During the production the followings bugs have been encountered and solved:__
 * __DIFFERENT BOUNDS AND ZOOM BASED ON LOCATION SIZE AND OTHER MARKERS__ I noticed while testing that when researching in bigger location like Rome or Paris were too zoomed out and additionally after every research the bounds of the map increased as they would consider also the markers from the previous researches. _Solution_: I created a button that initialise the map to make a whole new search to improve the UX. I removed the map.fitBounds object from the createMarkers function so that the map would not zoom out if the bounds of the searched place were way larger that the original zoom set up in the initMap and I added a zoom condition in the same initMap function that sets the zoom to a specific size for every location in order to have consistency in the UX.
 
 
-Code was validated on https://validator.w3.org/  and https://jigsaw.w3.org/css-validator/
+Code was validated for [HTML](https://validator.w3.org/) , [CSS](https://jigsaw.w3.org/css-validator/) and [Javascript](https://jshint.com/).
 
 
 # Deployment

@@ -1,12 +1,15 @@
-let pos;
-let map;
-let bounds;
-let infoWindow;
-let currentInfoWindow;
-let service;
-let infoPane;
-let searchBox;
-let markers = [];
+/*jshint esversion: 6 */
+
+
+var pos;
+var map;
+var bounds;
+var infoWindow;
+var currentInfoWindow;
+var service;
+var infoPane;
+var searchBox;
+var markers = [];
 
 
 
@@ -26,8 +29,8 @@ function initMap() {
 
 
   // Create the search box and link it to the UI element.
-  let input = document.getElementById('pac-input');
-  let searchBox = new google.maps.places.SearchBox(input);
+  var input = document.getElementById('pac-input');
+  var searchBox = new google.maps.places.SearchBox(input);
 
   // Bias the SearchBox results towards current map's viewport.
   map.addListener('bounds_changed', function() {
@@ -38,21 +41,20 @@ function initMap() {
   // more details for that place.
 
   searchBox.addListener('places_changed', function() {
-    let places = searchBox.getPlaces();
-    let pos = places[0].geometry.location;
+    var places = searchBox.getPlaces();
+    var pos = places[0].geometry.location;
 
     if (places.length == 0) {
       return;
     }
 
     // For each place, get the icon, name and location.
-    let bounds = new google.maps.LatLngBounds();
+    var bounds = new google.maps.LatLngBounds();
     places.forEach(function(place) {
       if (!place.geometry) {
-        console.log("Returned place contains no geometry");
         return;
       }
-      let icon = {
+      var icon = {
         url: place.icon,
         size: new google.maps.Size(71, 71),
         origin: new google.maps.Point(0, 0),
@@ -83,7 +85,7 @@ function initMap() {
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      let pos = {
+      var pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
@@ -121,7 +123,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 // Perform a Places Nearby Search Request
 function getNearbyPlaces(position) {
-  let request = {
+  var request = {
     location: position,
     rankBy: google.maps.places.RankBy.DISTANCE,
     keyword: 'pizza'
@@ -129,6 +131,7 @@ function getNearbyPlaces(position) {
   service = new google.maps.places.PlacesService(map);
   service.nearbySearch(request, nearbyCallback);
 }
+
 // Handle the results (up to 20) of the Nearby Search
 function nearbyCallback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -140,30 +143,24 @@ function nearbyCallback(results, status) {
 // Set markers at the location of each place result
 function createMarkers(places) {
   places.forEach(place => {
-    let marker = new google.maps.Marker({
+    var marker = new google.maps.Marker({
       position: place.geometry.location,
       map: map,
       title: place.name,
     });
-    console.log(marker);
 
-    // Add click listener to each marker
     google.maps.event.addListener(marker, 'click', () => {
-      let request = {
+      var request = {
         placeId: place.place_id,
         fields: ['name', 'formatted_address', 'geometry', 'rating',
           'website', 'photos'
         ]
       };
 
-      /* Only fetch the details of a place when the user clicks on a marker.
-       * If we fetch the details for all place results as soon as we get
-       * the search response, we will hit API rate limits. */
       service.getDetails(request, (placeResult, status) => {
         showDetails(placeResult, marker, status)
       });
     });
-    // Adjust the map bounds to include the location of this marker
     bounds.extend(place.geometry.location);
   });
 }
@@ -172,8 +169,8 @@ function createMarkers(places) {
 // InfoWindow to display details above the marker
 function showDetails(placeResult, marker, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
-    let placeInfowindow = new google.maps.InfoWindow();
-    let rating = "None";
+    var placeInfowindow = new google.maps.InfoWindow();
+    var rating = "None";
     if (placeResult.rating) rating = placeResult.rating;
     placeInfowindow.setContent('<div><strong>' + placeResult.name +
       '</strong><br>' + 'Rating: ' + rating + '</div>');
@@ -195,52 +192,51 @@ function showPanel(placeResult) {
   if (infoPane.classList.contains("open")) {
     infoPane.classList.remove("open");
   }
-  // Clear the previous details
+
   while (infoPane.lastChild) {
     infoPane.removeChild(infoPane.lastChild);
   }
-  // Display a Place Photo with the Place Details if there is one
+
   if (placeResult.photos) {
-    let firstPhoto = placeResult.photos[0];
-    let photo = document.createElement('img');
+    var firstPhoto = placeResult.photos[0];
+    var photo = document.createElement('img');
     photo.classList.add('hero');
     photo.src = firstPhoto.getUrl();
     infoPane.appendChild(photo);
   }
 
-  // Add place details with text formatting
-  let name = document.createElement('h1');
+
+  var name = document.createElement('h1');
   name.classList.add('place');
   name.textContent = placeResult.name;
   infoPane.appendChild(name);
   if (placeResult.rating) {
-    let rating = document.createElement('h6');
+    var rating = document.createElement('h6');
     rating.classList.add('details');
     rating.textContent = `Rating: ${placeResult.rating} \u272e`;
     infoPane.appendChild(rating);
   }
-  let address = document.createElement('h6');
+  var address = document.createElement('h6');
   address.classList.add('details');
   address.textContent = placeResult.formatted_address;
   infoPane.appendChild(address);
   if (placeResult.website) {
-    let websitePara = document.createElement('h6');
-    let websiteLink = document.createElement("a");
-    let websiteUrl = document.createTextNode(placeResult.website);
-    let target = websiteLink.setAttribute('target', '_blank');
+    var websitePara = document.createElement('h6');
+    var websiteLink = document.createElement("a");
+    var websiteUrl = document.createTextNode(placeResult.website);
+    var target = websiteLink.setAttribute('target', '_blank');
     websiteLink.appendChild(websiteUrl);
     websiteLink.title = placeResult.website;
     websiteLink.href = placeResult.website;
     websitePara.appendChild(websiteLink);
     infoPane.appendChild(websitePara);
   }
-
-  // Open the infoPane
   infoPane.classList.add("open");
 }
 
+// Hide show button
 function toggle_visibility() {
-  let p = document.getElementById("panel");
+  var p = document.getElementById("panel");
   if (p.style.display == 'block') {
     p.style.display = 'none';
   } else {
