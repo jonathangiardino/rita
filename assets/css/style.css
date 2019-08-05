@@ -530,6 +530,10 @@ a {
     font-size: 12px;
   }
 
+  #hide-show {
+    float: right;
+  }
+
   .location-input {
     width: 88%;
     height: 35px;
@@ -543,6 +547,10 @@ a {
 
   #panel>img {
     display: none;
+  }
+
+  .open {
+    width: 180px;
   }
 
   .place {
