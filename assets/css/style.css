@@ -384,7 +384,27 @@ a {
 /* Media Queries */
 @media only screen and (max-width: 767px) {
   .container-main {
-    background-size: cover;
+    background-size: auto;
+  }
+
+  .ritaLogo {
+    display: none;
+  }
+
+  .corner-btn {
+    margin: 10px;
+    width: 180px;
+    height: 50px;
+  }
+
+  .orange-btn, .orange-btn-small, #new-search, #hide-show {
+    margin: 10px;
+    width: 85%;
+    height: 50px;
+  }
+
+  .location-input {
+        font-size: 16px;
   }
 
   .main {
@@ -392,11 +412,11 @@ a {
   }
 
   .heading1 {
-    font-size: 25px;
+    font-size: 30px;
   }
 
   .heading2 {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .infobox {
@@ -442,6 +462,19 @@ a {
   }
 
   a i {
-    font-size: 50px;
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+  .orange-btn {
+    width: 220px;
+  }
+
+  .infobox {
+    width: 70%;
+    height: 150px;
+    padding-bottom: 50px;
   }
 }
