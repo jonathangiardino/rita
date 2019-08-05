@@ -288,6 +288,7 @@ a i:hover {
 /* Styling for place details */
 .results-panel {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -384,12 +385,16 @@ a {
     background-size: auto;
   }
 
+  .main {
+    margin-top: 20px;
+  }
+
   .ritaLogo {
     display: none;
   }
 
   .buttons-wrapper {
-    display: block;
+    display: flex;
     width: 100%;
   }
 
@@ -400,7 +405,6 @@ a {
   }
 
   .orange-btn, .orange-btn-small, #new-search, #hide-show {
-    margin-left: 7.5%;
     width: 85%;
     height: 45px;
     font-size: 15px;
@@ -417,11 +421,7 @@ a {
   .location-input {
     font-size: 16px;
     width: 85%;
-    margin-left: 7.5%;
-  }
-
-  .main {
-    margin-top: 50px;
+    height: 42px;
   }
 
   .heading1 {
@@ -481,7 +481,7 @@ a {
   }
 
   .header {
-    margin-bottom: 220px;
+    margin-bottom: 200px;
     overflow: hidden;
   }
 
@@ -494,13 +494,8 @@ a {
     display: none;
   }
 
-  .buttons-wrapper {
-    display: block;
-    width: 100%;
-  }
-
   .orange-btn, .orange-btn-small {
-    width: 95%;
+    width: 90%;
     height: 39px;
     font-size: 15px;
   }
@@ -516,13 +511,12 @@ a {
   }
 
   .location-input {
-    width: 95%;
-    height: 37px;
+    width: 90%;
+    height: 36px;
     font-size: 14px;
   }
 
   #map {
-    margin-left: 5px;
     border-radius: 0;
     height: 320px;
   }
@@ -532,7 +526,15 @@ a {
   }
 
   .open {
-    width: 180px;
+    width: 100%;
+  }
+
+  .map-container, .results-panel {
+    flex-wrap: wrap;
+  }
+
+  .results-panel {
+    margin-top: 0px;
   }
 
   .place {
