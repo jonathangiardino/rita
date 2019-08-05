@@ -270,7 +270,7 @@ a i:hover {
 /* Map Section */
 .map-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   padding-top: 70px;
 }
 
@@ -385,17 +385,9 @@ a {
     overflow: hidden;
   }
 
-  .main {
-    margin-top: 20px;
-  }
-
   #logo {
     width: 60px;
     height: auto;
-  }
-
-  .main {
-    margin-top: 20px;
   }
 
   .ritaLogo {
@@ -517,6 +509,10 @@ a {
 
   .map-container {
     padding-bottom: 40px;
+  }
+
+  .map-container, .results-panel {
+    flex-wrap: nowrap;
   }
 
   .map {
