@@ -395,6 +395,10 @@ a {
     height: auto;
   }
 
+  .main {
+    margin-top: 20px;
+  }
+
   .ritaLogo {
     display: none;
   }
@@ -493,7 +497,7 @@ a {
   }
 
   .header {
-    margin-bottom: 220px;
+    margin-bottom: 200px;
     overflow: hidden;
   }
 
