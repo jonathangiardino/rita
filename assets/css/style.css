@@ -395,7 +395,7 @@ a {
   }
 
   .orange-btn, .orange-btn-small, #new-search, #hide-show {
-    margin: 6% 7.5% 0;
+    margin: 3% 7.5% 0;
     width: 85%;
     height: 45px;
     font-size: 15px;
@@ -467,12 +467,12 @@ a {
   }
 
   .header {
-    margin-bottom: 180px;
+    margin-bottom: 150px;
   }
 
   .heading1 {
     font-size: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   .heading2 {
@@ -510,6 +510,10 @@ a {
 
   #panel>img {
     display: none;
+  }
+
+  .open {
+    width: 150px;
   }
 }
 
