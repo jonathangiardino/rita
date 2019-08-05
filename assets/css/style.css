@@ -467,7 +467,7 @@ a {
   }
 
   .header {
-    margin-bottom: 150px;
+    margin-bottom: 220px;
   }
 
   .heading1 {
@@ -513,13 +513,11 @@ a {
   }
 
   .open {
-    width: 150px;
+    width: 180px;
   }
-}
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-  .orange-btn {
-    width: 220px;
+  .place {
+    font-size: 15px;
   }
 
   .infobox {
@@ -527,24 +525,35 @@ a {
     height: 150px;
     padding-bottom: 50px;
   }
-}
 
-@media (hover:none),
-(hover:on-demand) {
-  .corner-btn:hover, .orange-btn:hover, .orange-btn-small:hover, #new-search:hover, #hide-show:hover {
-    border: none;
-    transform: translateY(0);
-    background-image: linear-gradient(to right, #e63a4f 0%, #FF8900 100%);
-    cursor: pointer;
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .orange-btn {
+      width: 220px;
+    }
+
+    .infobox {
+      width: 70%;
+      height: 150px;
+      padding-bottom: 50px;
+    }
   }
 
-  .infobox:hover {
-    transform: translateX(0);
-  }
+  @media (hover:none),
+  (hover:on-demand) {
+    .corner-btn:hover, .orange-btn:hover, .orange-btn-small:hover, #new-search:hover, #hide-show:hover {
+      border: none;
+      transform: translateY(0);
+      background-image: linear-gradient(to right, #e63a4f 0%, #FF8900 100%);
+      cursor: pointer;
+    }
 
-  a i:hover {
-    color: #e63a4f;
-    font-size: 40px;
-    transform: translateY(0);
+    .infobox:hover {
+      transform: translateX(0);
+    }
+
+    a i:hover {
+      color: #e63a4f;
+      font-size: 40px;
+      transform: translateY(0);
+    }
   }
-}
