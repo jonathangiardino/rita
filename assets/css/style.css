@@ -379,13 +379,18 @@ a {
 
 /* Media Queries */
 /* phone portrait */
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .container-main {
     background-size: auto;
   }
 
   .ritaLogo {
     display: none;
+  }
+
+  .buttons-wrapper {
+    display: block;
+    width: 100%;
   }
 
   .corner-btn {
@@ -395,15 +400,24 @@ a {
   }
 
   .orange-btn, .orange-btn-small, #new-search, #hide-show {
-    margin: 3% 7.5% 0;
+    margin-left: 7.5%;
     width: 85%;
     height: 45px;
     font-size: 15px;
   }
 
+  #new-search, #hide-show {
+    float: none;
+  }
+
+  #new-search {
+    margin-top: 15px;
+  }
+
   .location-input {
     font-size: 16px;
     width: 85%;
+    margin-left: 7.5%;
   }
 
   .main {
@@ -461,13 +475,14 @@ a {
 }
 
 /* phone landscape */
-@media only screen and (min-device-width: 320px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 812px) and (orientation: landscape) {
   .ritaLogo {
     display: none;
   }
 
   .header {
     margin-bottom: 220px;
+    overflow: hidden;
   }
 
   .heading1 {
@@ -479,8 +494,13 @@ a {
     display: none;
   }
 
-  .orange-btn, .orange-btn-small {
+  .buttons-wrapper {
+    display: block;
     width: 100%;
+  }
+
+  .orange-btn, .orange-btn-small {
+    width: 95%;
     height: 39px;
     font-size: 15px;
   }
@@ -496,10 +516,9 @@ a {
   }
 
   .location-input {
-    width: 100%;
+    width: 95%;
     height: 37px;
     font-size: 14px;
-    margin: 5px 0;
   }
 
   #map {
@@ -522,38 +541,43 @@ a {
 
   .infobox {
     width: 70%;
+    height: auto;
+    padding-bottom: 50px;
+  }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+  .orange-btn {
+    width: 220px;
+  }
+
+  .location-input {
+    width: 220px;
+  }
+
+  .infobox {
+    width: 70%;
     height: 150px;
     padding-bottom: 50px;
   }
+}
 
-  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-    .orange-btn {
-      width: 220px;
-    }
-
-    .infobox {
-      width: 70%;
-      height: 150px;
-      padding-bottom: 50px;
-    }
+@media (hover:none),
+(hover:on-demand) {
+  .corner-btn:hover, .orange-btn:hover, .orange-btn-small:hover, #new-search:hover, #hide-show:hover {
+    border: none;
+    transform: translateY(0);
+    background-image: linear-gradient(to right, #e63a4f 0%, #FF8900 100%);
+    cursor: pointer;
   }
 
-  @media (hover:none),
-  (hover:on-demand) {
-    .corner-btn:hover, .orange-btn:hover, .orange-btn-small:hover, #new-search:hover, #hide-show:hover {
-      border: none;
-      transform: translateY(0);
-      background-image: linear-gradient(to right, #e63a4f 0%, #FF8900 100%);
-      cursor: pointer;
-    }
-
-    .infobox:hover {
-      transform: translateX(0);
-    }
-
-    a i:hover {
-      color: #e63a4f;
-      font-size: 40px;
-      transform: translateY(0);
-    }
+  .infobox:hover {
+    transform: translateX(0);
   }
+
+  a i:hover {
+    color: #e63a4f;
+    font-size: 40px;
+    transform: translateY(0);
+  }
+}
