@@ -70,7 +70,6 @@ body {
 }
 
 .corner-btn:hover {
-  color: #ffffff;
   border: none;
   transform: translateY(-3px);
   background-image: linear-gradient(to right, #e63a4f 0%, #FF8900 70%);
@@ -133,12 +132,12 @@ body {
 }
 
 .location-input {
-  padding: 3px 10px;
-  margin: 7px;
+  margin: 8px;
   width: 300px;
-  height: 35px;
+  height: 43px;
   font-size: 14px;
   font-family: "Roboto", sans-serif;
+  border: none;
   border-radius: 5px;
   text-align: center;
   outline: none;
@@ -185,7 +184,6 @@ body {
 }
 
 .orange-btn-small:hover {
-  color: #ffffff;
   border: none;
   transform: translateY(-3px);
   background-image: linear-gradient(to right, #e63a4f 0%, #FF8900 70%);
@@ -266,7 +264,7 @@ a i {
 a i:hover {
   color: #FF8900;
   transform: translateY(-1px);
-  font-size: 35px
+  font-size: 32px;
 }
 
 /* Map Section */
@@ -349,7 +347,6 @@ a {
 }
 
 #hide-show:hover {
-  color: #ffffff;
   border: none;
   transform: translateY(-3px);
   background-image: linear-gradient(to right, #e63a4f 0%, #FF8900 70%);
@@ -374,7 +371,6 @@ a {
 }
 
 #new-search:hover {
-  color: #ffffff;
   border: none;
   transform: translateY(-3px);
   background-image: linear-gradient(to right, #e63a4f 0%, #FF8900 70%);
@@ -382,7 +378,8 @@ a {
 }
 
 /* Media Queries */
-@media only screen and (max-width: 767px) {
+/* phone portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   .container-main {
     background-size: auto;
   }
@@ -394,17 +391,19 @@ a {
   .corner-btn {
     margin: 10px;
     width: 180px;
-    height: 50px;
+    height: 45px;
   }
 
   .orange-btn, .orange-btn-small, #new-search, #hide-show {
-    margin: 10px;
+    margin: 6% 7.5% 0;
     width: 85%;
-    height: 50px;
+    height: 45px;
+    font-size: 15px;
   }
 
   .location-input {
-        font-size: 16px;
+    font-size: 16px;
+    width: 85%;
   }
 
   .main {
@@ -416,7 +415,7 @@ a {
   }
 
   .heading2 {
-    font-size: 18px;
+    display: none;
   }
 
   .infobox {
@@ -451,12 +450,6 @@ a {
     margin-top: 100px;
   }
 
-  #hide-show, #new-search {
-    font-size: 14px;
-    width: 100%;
-    margin: 10px 0 0 0;
-  }
-
   #panel>img {
     display: none;
   }
@@ -464,6 +457,57 @@ a {
   a i {
     font-size: 40px;
     margin-bottom: 40px;
+  }
+}
+
+/* phone landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .ritaLogo {
+    display: none;
+  }
+
+  .header {
+    margin-bottom: 200px;
+  }
+
+  .heading1 {
+    font-size: 30px;
+  }
+
+  .heading2 {
+    display: none;
+  }
+
+  .orange-btn, .orange-btn-small {
+    width: 200px;
+    height: 39px;
+    font-size: 15px;
+  }
+
+  .map {
+    height: 400px;
+  }
+
+  #new-search, #hide-show {
+    width: 180px;
+    height: 39px;
+    font-size: 12px;
+  }
+
+  .location-input {
+    width: 200px;
+    height: 37px;
+    font-size: 14px;
+  }
+
+  #map {
+    margin-left: 5px;
+    border-radius: 0;
+    height: 320px;
+  }
+
+  #panel>img {
+    display: none;
   }
 }
 
@@ -476,5 +520,25 @@ a {
     width: 70%;
     height: 150px;
     padding-bottom: 50px;
+  }
+}
+
+@media (hover:none),
+(hover:on-demand) {
+  .corner-btn:hover, .orange-btn:hover, .orange-btn-small:hover, #new-search:hover, #hide-show:hover {
+    border: none;
+    transform: translateY(0);
+    background-image: linear-gradient(to right, #e63a4f 0%, #FF8900 100%);
+    cursor: pointer;
+  }
+
+  .infobox:hover {
+    transform: translateX(0);
+  }
+
+  a i:hover {
+    color: #e63a4f;
+    font-size: 40px;
+    transform: translateY(0);
   }
 }
