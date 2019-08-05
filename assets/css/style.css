@@ -383,11 +383,13 @@ a {
   .container-main {
     background-size: auto;
     overflow: hidden;
+    height: 720px;
   }
 
   #logo {
     width: 60px;
     height: auto;
+    margin-top: 23px;
   }
 
   .ritaLogo {
@@ -463,7 +465,7 @@ a {
   }
 
   .info-section {
-    margin-top: 100px;
+    margin-top: 70px;
   }
 
   #panel>img {
@@ -478,6 +480,10 @@ a {
 
 /* phone landscape */
 @media only screen and (min-device-width: 320px) and (max-device-width: 812px) and (orientation: landscape) {
+  .container-main {
+    height: 720px;
+  }
+
   .ritaLogo {
     display: none;
   }
