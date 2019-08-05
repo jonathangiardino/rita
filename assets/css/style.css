@@ -270,7 +270,7 @@ a i:hover {
 /* Map Section */
 .map-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   padding-top: 70px;
 }
 
